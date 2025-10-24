@@ -1,0 +1,84 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.navbar {
+  background-color: hsl(0, 0%, 100%);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.logo {
+  border-radius: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.logo img {
+  border-radius: 100px;
+  margin-left: 30px;
+}
+
+.logo:hover {
+  transform: scale(2);
+}
+
+.nav-links {
+  display: flex;
+  padding: 20px;
+  font-weight: bold;
+
+}
+
+.nav-links li {
+  margin-left: 20px;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  transition: color 0.3s ease;
+  padding: 50px;
+}
+
+.nav-links a:hover {
+  color: hsl(0, 100%, 50%)
+}
+
+.heading {
+  gap: 100px;
+  padding-top: 20px;
+}
+
+.samsung {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.samsung {
+  grid-column-start: 1span;
+  padding: 20px;
+}
+
+.samsung1 {
+  height: 180px;
+  display: grid;
+
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+body {
+  overflow-x: hidden;
+}
