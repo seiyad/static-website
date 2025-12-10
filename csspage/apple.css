@@ -69,13 +69,6 @@
 .picture:hover {
   box-shadow: black;
 }
-
-footer {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
 .a{
   padding:10px;
   margin-left: 20px;
@@ -83,4 +76,13 @@ footer {
 .b{
   padding:10px;
   margin-left: 10px;
+}
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+body {
+  overflow-x: hidden;
 }
