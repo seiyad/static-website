@@ -109,6 +109,11 @@ footer {
   padding: 30px;
 }
 
+.leter {
+  color: white;
+  font-size: large;
+}
+
 body {
   overflow-x: hidden;
 }
