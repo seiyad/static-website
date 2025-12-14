@@ -26,7 +26,7 @@
 }
 
 .logo:hover {
-  transform: scale(2);
+  transform: scale(1.02);
 }
 
 .nav-links {
@@ -62,7 +62,7 @@
 
 .picture:hover {
   background-color: rgb(255, 255, 255);
-  transition: 20px;
+  transform: scale(1.02);
   width: 300px;
   color: rgb(0, 0, 0);
   text-align: center;
