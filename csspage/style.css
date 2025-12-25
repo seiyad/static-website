@@ -40,8 +40,8 @@
 }
 
 .nav-links li {
+  display: flex;
   margin-left: 20px;
-
 }
 
 .nav-links a {
