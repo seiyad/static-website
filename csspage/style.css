@@ -40,17 +40,14 @@
 }
 
 .nav-links li {
-  display: flex;
   margin-left: 10px;
 }
 
 .nav-links a {
-  display: flex;
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-size: 15px;
   transition: color 0.3s ease;
-  padding:10px;
 }
 
 .nav-links a:hover {
