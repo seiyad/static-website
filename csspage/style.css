@@ -40,10 +40,12 @@
 }
 
 .nav-links li {
-  margin-left: 10px;
+  display: flex;
+  margin-left: 20px;
 }
 
 .nav-links a {
+  display: flex;
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-size: 15px;
