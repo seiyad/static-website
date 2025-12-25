@@ -9,11 +9,12 @@
   display: flex;
   justify-content: space-between;
   text-decoration: none;
+  position: fixed;
+  z-index: 1;
   width: 100%;
 }
 
 .logo {
-  display:flex;
   border-radius: 100%;
   text-align: center;
   margin-bottom: 50px;
@@ -40,7 +41,6 @@
 .letter {
   margin-left: 90px;
   text-align: center;
-  display: grid;
 }
 
 .nav-links li {
@@ -100,6 +100,12 @@ img {
   background-color: oklab(100% 0 -0.00011);
   color: #ffffff;
 }
+
+.letter {
+  font: 100;
+  display: grid;
+}
+
 .words {
   padding: 80px;
 }
@@ -118,4 +124,8 @@ footer {
   color: white;
   padding: 20px;
   text-align: center;
+}
+
+body {
+  overflow-x: hidden;
 }
