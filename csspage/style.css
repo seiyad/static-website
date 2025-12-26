@@ -78,7 +78,7 @@
   grid-template-rows: 1fr;
   margin-top: 130px;
   padding-bottom: 55px;
-  margin-left: 20px;
+  margin-left: 45px;
 }
 
 .mobile2 {
@@ -86,7 +86,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   padding-bottom: 55px;
-  margin-left: 20px;
+  margin-left: 45px;
 }
 
 .mobile3 {
@@ -94,7 +94,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   padding-bottom: 55px;
-  margin-left: 20px;
+  margin-left: 45px;
 }
 
 img {
@@ -134,7 +134,4 @@ footer {
 
 body {
   overflow-x: hidden;
-}
-.all{
-    margin-left: 45px;
 }
