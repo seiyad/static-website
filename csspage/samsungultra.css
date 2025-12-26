@@ -66,6 +66,7 @@
   background-color: white;
   display: flex;
   justify-content: center;
+  padding-top: 80px;
   box-shadow: black;
   border-radius: 30px;
   width: 500px;
