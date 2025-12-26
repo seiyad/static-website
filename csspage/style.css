@@ -136,6 +136,5 @@ body {
   overflow-x: hidden;
 }
 .all{
-  display:flex;
-  justify-content: center;
+    margin-left: 45px;
 }
