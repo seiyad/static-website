@@ -1,91 +1,191 @@
 * {
   padding: 0px;
   margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+body {
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
-  background-color: hsl(0, 0%, 100%);
-  padding: 15px 30px;
+  background-color: #ffffff;
+  padding: 15px 50px;
   display: flex;
   justify-content: space-between;
-  text-decoration: none;
+  align-items: center;            /* ✅ Vertically centered */
+  position: fixed;                /* ✅ Sticky navbar */
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
 }
 
+/* ===== LOGO ===== */
 .logo {
-  color: hsl(0, 20%, 99%);
+  color: #111;                    /* ✅ Fixed: was near-white hsl(0,20%,99%), invisible */
   font-size: 24px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
+/* ===== NAV LINKS ===== */
 .nav-links {
   display: flex;
-  padding: 20px;
+  list-style: none;
+  gap: 30px;
+  padding: 0px;                   /* ✅ Fixed: was 20px, caused misalignment */
   font-weight: bold;
   color: black;
-
 }
 
 .nav-links li {
-  margin-left: 20px;
-
+  margin-left: 0px;               /* ✅ gap handles spacing */
 }
 
 .nav-links a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: #333;
   font-size: 15px;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  position: relative;
+  transition: 0.3s ease;
+  padding: 5px 0px;
+}
+
+/* Underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #ff3b3b;
+  transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: hsl(0, 100%, 50%)
+  color: #ff3b3b;
 }
 
-.picture1 {
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 20px;
-  width: 300px;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  color: rgb(0, 0, 0);
-  margin-top: 20px;
-
+.nav-links a:hover::after {
+  width: 100%;
 }
 
+/* ===== VIDEO ===== */
+.video {
+  width: 100%;                    /* ✅ Fixed: was 'auto' */
+  margin-top: 90px;               /* ✅ Offset for fixed navbar */
+}
+
+.video video {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== MOBILE GRID ===== */
 .mobile {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  margin-top: 130px;
-  margin-left: 45px;
+  grid-template-columns: repeat(4, 1fr); /* ✅ Cleaner syntax */
+  gap: 25px;                      /* ✅ Fixed: was no gap, cards overlapped */
+  margin-top: 30px;               /* ✅ Fixed: was 130px, too much */
+  padding: 30px 50px;
   color: rgb(0, 0, 0);
 }
 
-.img {
-  margin-top: 25px;
+/* ===== PICTURE CARD ===== */
+.picture1 {
+  background-color: #ffffff;
+  border-radius: 15px;            /* ✅ Cleaner radius */
+  width: 100%;                    /* ✅ Fixed: was fixed 300px, breaks grid */
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: 0px;                /* ✅ Gap handles spacing now */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
 }
 
-.picture:hover {
-  box-shadow: black;
+.picture1:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
-.a{
-  padding:10px;
+
+.picture1 img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: contain;            /* ✅ No image cropping */
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* ===== PICTURE HOVER (was broken) ===== */
+.picture:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* ✅ Fixed: was just 'black', invalid */
+  transform: translateY(-8px);
+}
+
+/* ===== IMAGE MARGIN ===== */
+.img {
+  margin-top: 10px;               /* ✅ Reduced from 25px */
+}
+
+/* ===== A & B HELPERS ===== */
+.a {
+  padding: 10px;
   margin-left: 20px;
 }
-.video{
-  width: auto;
-}
-.b{
-  padding:10px;
+
+.b {
+  padding: 10px;
   margin-left: 10px;
 }
+
+/* ===== FOOTER ===== */
 footer {
-  background-color: black;
+  background-color: #111;
   color: white;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
+  margin-top: 40px;
 }
-body {
-  overflow-x: hidden;
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .mobile {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .video video {
+    height: 50vh;
+  }
 }
