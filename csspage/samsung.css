@@ -37,6 +37,9 @@
   margin-left: 20px;
 
 }
+.video{
+  width: auto;
+}
 
 .nav-links a {
   text-decoration: none;
