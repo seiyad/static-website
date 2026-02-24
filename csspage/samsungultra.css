@@ -1,137 +1,234 @@
 * {
   padding: 0;
   margin: 0;
-
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+body {
+  background-color: white;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
-  background-color: oklab(100% 0 -0.00011);
+  background-color: #ffffff;
   display: flex;
   justify-content: space-between;
+  align-items: center;            /* ✅ Logo & links vertically centered */
   text-decoration: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   width: 100%;
-  ;
+  padding: 12px 40px;            /* ✅ Added padding for breathing room */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* ===== LOGO ===== */
 .logo {
-  border-radius: 100%;
-  text-align: center;
-  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;             /* ✅ Fixed: was 50px, pushed logo down */
+  transition: 0.3s ease;
 }
 
 .logo img {
-  border-radius: 100px;
-  margin-left: 30px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-left: 0px;               /* ✅ Fixed: navbar padding handles spacing */
+  object-fit: cover;
 }
 
 .logo:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);         /* ✅ Kept subtle, slightly increased */
 }
 
-.nav-links {
-  display: flex;
-  padding: 20px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 30px;
-
-}
-
+/* ===== LETTER ===== */
 .letter {
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-left: 10px;
 }
-.letter1{
-  font: 100;
-  display: grid;
-  margin-left: 50px;
+
+.letter1 {
+  display: flex;
+  align-items: center;            /* ✅ Fixed: was grid, flex is better here */
+  margin-left: 15px;
   text-align: center;
   font-weight: bold;
-  text-align: center;
-  margin-top: 30px;
+  margin-top: 0px;                /* ✅ Fixed: was 30px, pushed text down */
+  font-size: 14px;
 }
 
+/* ===== NAV LINKS ===== */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 10px;                      /* ✅ Gap handles spacing */
+  padding: 0px;                   /* ✅ Fixed: was 20px, misaligned */
+  font-weight: bold;
+  align-items: center;
+  margin-top: 0px;                /* ✅ Fixed: was 30px */
+}
 
 .nav-links li {
-  margin-left: 20px;
-
+  margin-left: 0px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-size: 15px;
-  transition: color 0.3s ease;
-  padding: 90px;
+  font-weight: 600;
+  position: relative;
+  transition: 0.3s ease;
+  padding: 8px 12px;              /* ✅ Fixed: was 90px! Way too much */
+}
+
+/* Underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #ff3b3b;
+  transition: 0.3s ease;
 }
 
 .nav-links a:hover {
   color: hsl(0, 100%, 50%);
 }
 
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== PHOTO ===== */
 .photo {
   background-color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-top: 80px;
-  box-shadow: black;
   border-radius: 30px;
-  width: 500px;
-  margin: auto
+  width: 90%;                     /* ✅ Fixed: was 500px fixed, now responsive */
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* ✅ Fixed: was 'black', invalid */
+  margin-top: 90px;               /* ✅ Offset for fixed navbar */
 }
 
+.photo img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* ===== PICTURE GRID ===== */
 .picture {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr); /* ✅ Responsive repeat */
   background-color: rgb(255, 255, 255);
-  height: 250px;
-  width: 1000px;
-  gap: 50px;
-  margin: auto;
-  margin-bottom: 70px;
+  width: 90%;                     /* ✅ Fixed: was 1000px fixed, breaks on mobile */
+  max-width: 1100px;
+  gap: 25px;                      /* ✅ Reduced from 50px */
+  margin: 40px auto 70px;
+  height: auto;                   /* ✅ Fixed: was 250px fixed, content gets cut */
 }
 
+/* ===== P CARD ===== */
 .p {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 15px;
   padding: 20px;
   background-color: white;
   text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .p:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);    /* ✅ Slightly stronger lift */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-body {
-  background-color: white;
-}
+/* ===== GENERAL A ===== */
 a {
   padding: 15px;
   text-decoration: none;
   color: rgb(0, 0, 0);
-
 }
 
+/* ===== BOX ===== */
 .box a:hover {
   color: rgb(47, 28, 216);
 }
 
 .box1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
+/* ===== FOOTER ===== */
 footer {
   background-color: black;
   color: white;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
+  margin-top: 40px;
 }
 
-body {
-  overflow-x: hidden;
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .picture {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .nav-links a {
+    padding: 6px 10px;
+  }
+
+  .photo {
+    width: 95%;
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .picture {
+    grid-template-columns: 1fr;
+    width: 95%;
+    gap: 20px;
+  }
+
+  .letter {
+    font-size: 16px;
+  }
 }
