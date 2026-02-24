@@ -1,87 +1,184 @@
 * {
   padding: 0px;
   margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+body {
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
-  background-color: hsl(0, 0%, 100%);
-  padding: 15px 30px;
+  background-color: #ffffff;
+  padding: 15px 50px;
   display: flex;
   justify-content: space-between;
-  text-decoration: none;
+  align-items: center;            /* ✅ Logo & links vertically centered */
+  position: fixed;                /* ✅ Sticky top navbar */
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
 }
 
+/* ===== LOGO ===== */
 .logo {
-  border-radius: 100%;
-  text-align: center;
-  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;             /* ✅ Fixed: was 50px, pushed logo down */
 }
 
 .logo img {
-  border-radius: 100px;
-  margin-left: 30px;
+  width: 60px;
+  border-radius: 50%;
+  margin-left: 0px;               /* ✅ Fixed: removed extra margin */
+  transition: 0.3s ease;
 }
 
-.logo:hover {
-  transform: scale(2);
+.logo:hover img {
+  transform: scale(1.08);         /* ✅ Fixed: was scale(2), too large */
 }
 
+/* ===== NAV LINKS ===== */
 .nav-links {
   display: flex;
-  padding: 20px;
+  list-style: none;
+  gap: 30px;
+  padding: 0px;                   /* ✅ Fixed: was 20px, misaligned links */
   font-weight: bold;
-
 }
 
 .nav-links li {
-  margin-left: 20px;
-
-}
-.video{
-  width: auto;
+  margin-left: 0px;               /* ✅ gap handles spacing now */
 }
 
 .nav-links a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: #333;
   font-size: 15px;
-  transition: color 0.3s ease;
-  padding: 50px;
+  font-weight: 600;
+  position: relative;
+  transition: 0.3s ease;
+  padding: 5px 0px;               /* ✅ Fixed: was 50px, links were overlapping */
+}
+
+/* Underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #ff3b3b;
+  transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: hsl(0, 100%, 50%)
+  color: #ff3b3b;
 }
 
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== VIDEO ===== */
+.video {
+  width: 100%;                    /* ✅ Fixed: was 'auto', now full width */
+  margin-top: 90px;               /* ✅ Offset for fixed navbar */
+}
+
+.video video {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== HEADING ===== */
 .heading {
   gap: 100px;
   padding-top: 20px;
-}
-
-.samsung {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-}
-
-.samsung {
-  grid-column-start: 1span;
-  padding: 20px;
-}
-
-.samsung1 {
-  height: 180px;
-  display: grid;
-
-}
-
-footer {
-  background-color: black;
-  color: white;
-  padding: 20px;
   text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 40px 50px 10px;
 }
 
-body {
-  overflow-x: hidden;
+/* ===== SAMSUNG GRID ===== */
+.samsung {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ Cleaner repeat syntax */
+  gap: 25px;                      /* ✅ Added gap between cards */
+  padding: 30px 50px;
+}
+
+/* ===== SAMSUNG CARD ===== */
+.samsung1 {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  min-height: 180px;              /* ✅ Fixed: was fixed 180px, now min-height */
+}
+
+.samsung1:hover {
+  transform: translateY(-8px);    /* ✅ Smooth hover lift */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.samsung1 img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: contain;            /* ✅ No image cropping */
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #111;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .samsung {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .samsung {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .video video {
+    height: 50vh;
+  }
 }
