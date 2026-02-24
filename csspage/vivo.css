@@ -63,7 +63,9 @@
   padding: 20px;
 
 }
-
+.video{
+  width: auto;
+}
 .vivo {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
